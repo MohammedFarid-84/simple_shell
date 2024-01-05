@@ -1,14 +1,26 @@
 #include "main.h"
 
-int main(void)
+/**a
+ * main - run mine shell.
+ * @no: count of argumnets.
+ * @arg: the arguments that user inserted.
+ * Return: 0 always.
+ */
+
+int main(int no, char **arg)
 {
-	char command[50];
+
+	if (no < 2)
+	{
+		perror("Error: no file or command");
+		return (EXIT_FAILUAR);
+	}
 
 	while (1)
 	{
-	The_shell_again();
-	Read_current_command(command, sizeof(command));
-	exe_c(command);
+		The_shell_again();
+		Read_current_command(arg[1], sizeof(arg[1]));
+		exe_c(arg[1]);
 	}
 
 	return 0;
