@@ -1,6 +1,6 @@
 #include "main.h"
 
-/**a
+/**
  * main - run mine shell.
  * @no: count of argumnets.
  * @arg: the arguments that user inserted.
@@ -13,7 +13,7 @@ int main(int no, char **arg)
 	if (no < 2)
 	{
 		perror("Error: no file or command");
-		return (EXIT_FAILUAR);
+		return (EXIT_FAILURE);
 	}
 
 	while (1)
@@ -23,5 +23,5 @@ int main(int no, char **arg)
 		exe_c(arg[1]);
 	}
 
-	return 0;
+	return (0);
 }

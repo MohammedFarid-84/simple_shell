@@ -1,10 +1,13 @@
-iinclude <stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <string.h>
 #include <stdlib.h>
-
+/**
+ * main - entry point
+ * Return: 0
+ */
 int main(void)
 {
 	char *cmd = NULL;
@@ -42,9 +45,7 @@ int main(void)
 				exit(EXIT_FAILURE);
 			}
 			else
-			{
 				wait(NULL);
-			}
 		}
 	}
 	free(cmd);

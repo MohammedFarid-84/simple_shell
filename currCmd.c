@@ -9,6 +9,5 @@
 void Read_current_command(char *command, int size)
 {
 	fgets(command, size, stdin);
-	// Remove newline, if present
 	command[strcspn(command, "\n")] = '\0';
 }
