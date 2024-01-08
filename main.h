@@ -17,7 +17,4 @@ char *fndf(char *);
 void printtxt(char *);
 void show_shell(int);
 char **splitLine(char *, char *);
-
-
-
 #endif

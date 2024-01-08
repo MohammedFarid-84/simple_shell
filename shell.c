@@ -1,6 +1,7 @@
 #include "main.h"
 
 /**
+<<<<<<< HEAD
  * printtxt- print text to standard output.
  * @txt: the text to print.
  * Return: void.

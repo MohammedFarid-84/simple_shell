@@ -1,4 +1,4 @@
-This is a team repository.
+This is a second team repository.
 
 Subject:
 Create a simple shell system.
