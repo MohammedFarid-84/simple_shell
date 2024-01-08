@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "gnu89",
+            "cppStandard": "gnu++98",
+            "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
+            "compilerArgs": [
+                "\"--Wall\", \"--Werror\", \"--Wextra\", \"--pednatic\", \"--std=gnu89\""
+            ]
+        }
+    ],
+    "version": 4
+}

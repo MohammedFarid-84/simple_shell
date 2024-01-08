@@ -1,19 +1,23 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* nesserey libraries */
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <stdlib.h>
+/* NESSESRY LIBRARIES */
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
 
-/* prototype functions */
-int s_strlen(char *string);
-void The_shell_again(void);
-void exe_c(const char *command);
-void Read_current_command(char *command, int size);
+
+/* PROTOTYPE FUNCTIONS */
+int execfile(void);
+char *fndf(char *);
+void printtxt(char *);
+void show_shell(int);
+char **splitLine(char *, char *);
+
 
 
 #endif

@@ -1,27 +1,44 @@
 #include "main.h"
 
-/**a
- * main - run mine shell.
- * @no: count of argumnets.
- * @arg: the arguments that user inserted.
- * Return: 0 always.
+/**
+ * printtxt- print text to standard output.
+ * @txt: the text to print.
+ * Return: void.
  */
 
-int main(int no, char **arg)
+void printtxt(char *txt)
 {
+	write(1, txt, strlen(txt));
+}
 
-	if (no < 2)
-	{
-		perror("Error: no file or command");
-		return (EXIT_FAILUAR);
-	}
+/**
+ * show_shell - print cursor sign for point to the
+ * shell wain type command from user.
+ * @pr: integer point to user permesson.
+ * Return: void.
+ */
+
+void show_shell(int pr)
+{
+	if (pr == 0)
+		printtxt("$ ");
+	else
+		printtxt("($) ");
+}
+
+/**
+ * main - run our simple shell.
+ *
+ * Return: zero always.
+ */
+
+int main(void)
+{
 
 	while (1)
 	{
-		The_shell_again();
-		Read_current_command(arg[1], sizeof(arg[1]));
-		exe_c(arg[1]);
+		show_shell(0);
+		execfile();
 	}
-
-	return 0;
+	return (0);
 }
