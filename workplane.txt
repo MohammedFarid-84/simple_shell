@@ -1,13 +1,13 @@
 project's files and functions:
 -----------------------------------------------------------------------------------------------
-| file name | function name         | description                                             |
+| file name | function name               | description                                       |
 |---------------------------------------------------------------------------------------------|
-| main.h    | no functions          | library files                                           |
+| main.h    | no functions                | library files                                     |
 |---------------------------------------------------------------------------------------------|
-| shell.c   | show_shell - printtxt | the main program simple shell that will contain all     |
-|           | main                  | files and libraries and create a entry point.           |
+| shell.c   | show_shell - printtxt       | the main program simple shell that will contain   |
+|           | main                        | all files and libraries and create a entry point. |
 |---------------------------------------------------------------------------------------------|
-| execf.c   | execfile - fndf       | search for command path and execute it.                 |
+| execf.c   | execfile - fndf - splitLine | search for command path and execute it.           |
 |---------------------------------------------------------------------------------------------|
 |
 |
