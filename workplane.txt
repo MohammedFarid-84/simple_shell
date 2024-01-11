@@ -9,6 +9,6 @@ project's files and functions:
 |---------------------------------------------------------------------------------------------|
 | execf.c   | execfile - fndf - splitLine | search for command path and execute it.           |
 |---------------------------------------------------------------------------------------------|
-|
-|
+| execf0.0.c| execCmd - splitLine - errMsg| v0.0 from shell execute basic command like /bin/ls|
+|---------------------------------------------------------------------------------------------|
 |

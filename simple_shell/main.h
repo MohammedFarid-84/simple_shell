@@ -12,9 +12,12 @@
 
 
 /* PROTOTYPE FUNCTIONS */
-int execfile(void);
-char *fndf(char *);
-void printtxt(char *);
-void show_shell(int);
+char *erromsg(int, char *, char *);
 char **splitLine(char *, char *);
+void execCmd(int, char *);
+void printtxt(char *);
+void show_shell(unsigned int);
+char **splitLine(char *, char *);
+
+
 #endif
