@@ -85,11 +85,9 @@ void execCmd(int no, char *shN, char **envo)
 
 	cmd[strcspn(cmd, "\n")] = 0;
 	childp = fork();
-
 	if (childp == -1)
 	{
 		free(cmd);
-		perror("Can't create new process");
 		return;
 	}
 	else if (childp == 0)

@@ -30,6 +30,7 @@ void show_shell(unsigned int pr)
  * main - run our simple shell.
  * @no: nothing.
  * @argv: parogramm name in first element.
+ * @argvn: environment variables.
  * Return: zero always.
  */
 
