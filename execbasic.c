@@ -42,44 +42,42 @@ char **splitLine(char *line, char *dilim)
  * execCmd - execute a command in new process.
  * @no: command count.
  * @shN: programm name.
+ * @envo: environment.
  * Return: void.
  */
 
-void execCmd(int no, char *shN)
+void execCmd(int no, char *shN, char **envo)
 {
 	char *cmd = NULL;
 	size_t len;
-	char **cmdar;
-	pid_t pNo;
+	pid_t childp;
 	char *erMsg;
 
 	if (getline(&cmd, &len, stdin) == -1)
 	{
+		printtxt("\n");
 		free(cmd);
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
-	cmdar = splitLine(cmd, " ");
-	pNo = fork();
-	if (pNo == -1)
+	cmd[strcspn(cmd, "\n")] = 0;
+	childp = fork();
+
+	if (childp == -1)
 	{
 		free(cmd);
-		exit(EXIT_FAILURE);
+		perror("Can't create new process");
+		return;
 	}
-	else if (pNo == 0)
+	else if (childp == 0)
 	{
-		erMsg = erromsg(no, shN, cmdar[0]);
-		if (execve(cmdar[0], cmdar, NULL) == -1)
+		erMsg = erromsg(no, shN, cmd);
+		if (execle(cmd, cmd, (char *)NULL, envo) == -1)
 		{
 			perror(erMsg);
 			free(cmd);
 			free(erMsg);
+			exit(EXIT_FAILURE);
 		}
-		else
-		{
-			free(erMsg);
-			free(cmd);
-		}
-		exit(EXIT_FAILURE);
 	}
 	else
 	{
