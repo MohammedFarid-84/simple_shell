@@ -39,6 +39,25 @@ char **splitLine(char *line, char *dilim)
 }
 
 /**
+ * testNull - test if the command insert is null.
+ * @cmd: is a command-line.
+ * Return: 0 if test failt or 1 if null.
+ */
+int testNull(char *cmd)
+{
+	int i = 0;
+
+	while (cmd[i] != '\n')
+	{
+		if (!isspace(cmd[i]))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+/**
  * execCmd - execute a command in new process.
  * @no: command count.
  * @shN: programm name.
@@ -58,6 +77,12 @@ void execCmd(int no, char *shN, char **envo)
 		free(cmd);
 		exit(EXIT_SUCCESS);
 	}
+	if (testNull(cmd) == 1)
+	{
+		free(cmd);
+		return;
+	}
+
 	cmd[strcspn(cmd, "\n")] = 0;
 	childp = fork();
 

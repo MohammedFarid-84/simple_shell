@@ -9,7 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-
+#include <ctype.h>
 
 /* PROTOTYPE FUNCTIONS */
 char *erromsg(int, char *, char *);
@@ -18,6 +18,7 @@ void execCmd(int, char *, char **);
 void printtxt(char *);
 void show_shell(unsigned int);
 char **splitLine(char *, char *);
+int testNull(char *);
 
 
 #endif
