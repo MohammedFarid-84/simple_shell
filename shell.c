@@ -35,7 +35,7 @@ void show_shell(unsigned int pr)
 
 int main(int no, char **argv, char **argvn)
 {
-	uid_t uids = getuid();
+	/* uid_t uids = getuid(); */
 	char *errno_srt = malloc(20);
 	int i = 0;
 
@@ -44,7 +44,7 @@ int main(int no, char **argv, char **argvn)
 
 	while (1)
 	{
-		show_shell(uids);
+		/* show_shell(uids); */
 		i++;
 		execCmd(i, argv[0], argvn);
 	}

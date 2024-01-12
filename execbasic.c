@@ -55,7 +55,6 @@ void execCmd(int no, char *shN, char **envo)
 
 	if (getline(&cmd, &len, stdin) == -1)
 	{
-		printtxt("\n");
 		free(cmd);
 		exit(EXIT_SUCCESS);
 	}
