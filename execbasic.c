@@ -30,7 +30,8 @@ char **splitLine(char *line, char *dilim)
 	chunk = strtok(line, dilim);
 	while (chunk != NULL)
 	{
-		aray[i] = chunk;
+		if (testNull(chunk) == 0)
+			aray[i] = chunk;
 		i++;
 		chunk = strtok(NULL, dilim);
 	}
@@ -50,9 +51,7 @@ int testNull(char *cmd)
 	while (cmd[i] != '\n')
 	{
 		if (!isspace(cmd[i]))
-		{
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -68,6 +67,7 @@ int testNull(char *cmd)
 void execCmd(int no, char *shN, char **envo)
 {
 	char *cmd = NULL;
+	char **arcmd;
 	size_t len;
 	pid_t childp;
 	char *erMsg;
@@ -83,7 +83,7 @@ void execCmd(int no, char *shN, char **envo)
 		return;
 	}
 
-	cmd[strcspn(cmd, "\n")] = 0;
+	arcmd = splitLine(cmd, " ");
 	childp = fork();
 	if (childp == -1)
 	{
@@ -92,8 +92,8 @@ void execCmd(int no, char *shN, char **envo)
 	}
 	else if (childp == 0)
 	{
-		erMsg = erromsg(no, shN, cmd);
-		if (execle(cmd, cmd, (char *)NULL, envo) == -1)
+		erMsg = erromsg(no, shN, arcmd[0]);
+		if (execle(arcmd[0], arcmd[0], arcmd[1], (char *)NULL, envo) == -1)
 		{
 			perror(erMsg);
 			free(cmd);
