@@ -14,11 +14,12 @@
 /* PROTOTYPE FUNCTIONS */
 char *erromsg(int, char *, char *);
 char **splitLine(char *, char *);
-void execCmd(int, char *, char **);
+void execCmd(int, char *);
 void printtxt(char *);
 void show_shell(unsigned int);
 char **splitLine(char *, char *);
 int testNull(char *);
+char *rtrnpath(char *);
 
 
 #endif
